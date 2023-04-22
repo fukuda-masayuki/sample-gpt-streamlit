@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: gpt_app
+    working_dir: '/src'
+    volumes:
+      - ./src:/src
+    ports:
+      - '8501:8501'
+    command: streamlit run app.py
