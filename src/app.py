@@ -1,6 +1,9 @@
 import streamlit as st
 import requests
 
+
+
+
 st.title('GPTと会話をしよう！！')
 
 title = st.text_input('Movie title', 'Life of Brian')
