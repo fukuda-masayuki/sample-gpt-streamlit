@@ -37,5 +37,5 @@ while True:
         if len(input_text) == 0:
             st.stop()
         messages.append({"role": "user", "content": input_text})
-        #text = cached_chat(messages)
-        #messages.append({"role": "assistant", "content": text})
+        text = cached_chat(messages)
+        messages.append({"role": "assistant", "content": text})
