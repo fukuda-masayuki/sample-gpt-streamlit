@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 
-
+openai.api_key = st.secrets["my_other_secrets"]["API_KEY"]
 
 # @see: https://qiita.com/suzuki_sh/items/fb7a21426043d8520dbe
 def stream_write(chunks, key=None):
@@ -28,6 +28,7 @@ def cached_chat(messages):
 messages = []
 chat_widget = st.empty()
 
+
 while True:
     with chat_widget.container():
         for message in messages:
@@ -36,5 +37,5 @@ while True:
         if len(input_text) == 0:
             st.stop()
         messages.append({"role": "user", "content": input_text})
-        text = cached_chat(messages)
-        messages.append({"role": "assistant", "content": text})
+        #text = cached_chat(messages)
+        #messages.append({"role": "assistant", "content": text})
