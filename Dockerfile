@@ -9,3 +9,7 @@ WORKDIR /src
 
 COPY /src /src
 EXPOSE 8080
+
+# APIキーを設定してください
+ENV OPENAI_API_KEY=
+
